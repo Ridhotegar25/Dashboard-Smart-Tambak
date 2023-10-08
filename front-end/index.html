@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Dashboard Smart Tambak</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+        </style>
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="burger-menu" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <h1 class="website-name">Smart Tambak Dashboard</h1>
+    </div>
+
+    <div class="content">
+        <div class="update">
+            <h3> Last Update : </h3>
+            <div class="timestamp"><p id = "time"></p></div>
+        </div>
+        <div class="info-card">
+            <h2>Tinggi Air <br> (Cm)</h2>
+            <p id="tinggi_air"></p>
+        </div>
+        <div class="info-card">
+            <h2>DO Air <br>(ppm) </h2>
+            <p id="oxygen"></p>
+        </div>
+        <div class="info-card">
+            <h2>TDS <br>(ppm)</h2>
+            <p id="salinitas"></p>
+        </div>
+        <div class="info-card">
+            <h2>Amonia </h2>
+            <p id="amonia"></p>
+        </div>
+        <div class="info-card2">
+            <h2>pH Air </h2>
+            <p id="phBox"></p>
+
+        </div>
+        <div class="info-card2">
+            <h2>Suhu Air Permukaan</h2>
+            <p id="permukaanBox"></p>
+        </div>
+        <div class="info-card2">
+            <h2>Suhu Air Dasar</h2>
+            <p id="dasarBox"></p>
+        </div>
+        <div class="info-card">
+            <h2>Suhu Ruang</h2>
+            <p id="suhu_ruang"></p>
+        </div>
+        <div class="info-card2">
+            <h2>Fluctuation pH</h2>
+            <p id="phFluxBox"></p>
+        </div>
+        <div class="info-card2">
+            <h2>Fluctuation Suhu <br> Air Permukaan</h2>
+            <p id="permukaanFluxBox"></p>
+        </div>
+        <div class="info-card2">
+            <h2>Fluctuation Suhu <br> Air Dasar</h2>
+            <p id="dasarFluxBox"></p>
+        </div>
+        <div class="info-card2">
+            <h2>Fluctuation Suhu <br>Air Rata-Rata</h2>
+            <p id="rataFluxBox"></p>
+        </div>
+    </div>
+
+    
+    <div class="table-container">
+        <h2 class="Judul">TABEL</h2>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Waktu</th>
+                <th>Suhu Permukaan</th>
+                <th>Suhu Dasar </th>
+                <th>Suhu Ruang</th>
+                <th>TDS</th>
+                <th>DO</th>
+                <th>PH Air</th>
+                <th>Amonia</th>
+                <th>Tinggi Air</th>
+            </tr>
+        </thead>
+        <tbody id="data-body">
+        </tbody>
+    </table>
+    <h2 class="Judul">GRAFIK</h2>
+    <div class="chart-container">
+        <!-- Suhu air permukaan -->
+        <div class="chart">
+            <canvas id="myChart"></canvas>
+        </div>
+        <!-- suhu air dasar  -->
+        <div class="chart">
+            <canvas id="ChartSuhuDasar"></canvas>
+        </div>
+        <!-- PH -->
+        <div class="chart">
+            <canvas id="ChartPh"></canvas>
+        </div>
+        <!-- Kadar Oksigen -->
+        <div class="chart">
+            <canvas id="ChartDo"></canvas>
+        </div>
+        <!-- Salinitas -->
+        <div class="chart">
+            <canvas id="ChartSalinitas"></canvas>
+        </div>
+        <!-- Suhu Ruang -->
+        <div class="chart">
+            <canvas id="ChartSuhuRuang"></canvas>
+        </div>
+        <!-- Salinitas -->
+        <div class="chart">
+            <canvas id="ChartAmonia"></canvas>
+        </div>
+        <!-- Tinggi Air -->
+        <div class="chart">
+            <canvas id="ChartTinggiAir"></canvas>
+        </div>
+    </div>
+    <script src="Script.js"></script>
+</div>
+<script src="index.js"></script>
+
+</body>
+</html>
